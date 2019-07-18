@@ -5,6 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @SpringBootApplication
 @RestController
 public class SpringbootDockerApplication {
@@ -15,7 +18,7 @@ public class SpringbootDockerApplication {
 
     @GetMapping
     public String say() {
-        return "hello docker";
+        return "hello docker" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"));
     }
 
 }
