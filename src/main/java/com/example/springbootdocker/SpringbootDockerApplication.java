@@ -18,7 +18,7 @@ public class SpringbootDockerApplication {
 
     @GetMapping
     public String say() {
-        return "hello docker" + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"));
+        return "hello docker " + LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss:SSS"));
     }
 
 }
