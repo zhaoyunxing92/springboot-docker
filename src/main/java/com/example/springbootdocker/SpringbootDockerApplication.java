@@ -26,13 +26,14 @@ public class SpringbootDockerApplication {
             list.add(new Per(i, "sunny"));
         }
         return list;
+
     }
 
     public class Per {
         private Integer id;
         private String name;
 
-        public Per(Integer id, String name) {
+        Per(Integer id, String name) {
             this.id = id;
             this.name = name;
         }

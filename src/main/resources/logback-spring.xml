@@ -8,7 +8,7 @@
               value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}"/>
     <property name="maxHistory" value="7"/>
 
-    <springProperty scope="context" name="log_home" source="log.path" defaultValue="./"/>
+    <springProperty scope="context" name="log_home" source="log.path" defaultValue="./logs"/>
     <springProperty scope="context" name="module_name" source="spring.application.name" defaultValue="module"/>
 
     <!--控制台输出info级别-->
