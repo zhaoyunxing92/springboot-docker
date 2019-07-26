@@ -3,3 +3,8 @@ spring:
     name: springboot-docker
   profiles:
     active: local
+
+server:
+  compression:
+    enabled: true
+    min-response-size: 50MB
