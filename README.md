@@ -2,6 +2,12 @@
 
 使用[docker-maven-plugin](https://github.com/spotify/docker-maven-plugin)插件构建docker版的springboot服务
 
+## 运行
+
+```shell
+mvn clean package docker:build
+```
+
 ## 配置说明
 
 * 切换工作目录在 `app`
