@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.example</groupId>
     <artifactId>springboot-docker</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>springboot-docker</name>
     <description>Demo project for Spring Boot</description>
 
@@ -43,14 +43,9 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.0.0</version>
                 <configuration>
+                    <dockerHost>http://192.168.3.21:2375</dockerHost>
                     <imageName>${project.build.finalName}:${project.version}</imageName>
-                    <workdir>/app</workdir> <!--指定工作目录-->
-                    <forceTags>false</forceTags>
-                    <baseImage>java</baseImage>
-                    <!--<exposes>-->
-                    <!--<expose>8080</expose>-->
-                    <!--</exposes>-->
-                    <!-- copy the service's jar file from target into the root directory of the image -->
+                    <dockerDirectory>${project.basedir}</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>
@@ -58,15 +53,16 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
-                    <runs>
-                        <run>mv /${project.build.finalName}.jar ./</run> <!--复制文件到工作目录-->
-                        <run>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime</run>
-                        <run>echo 'Asia/Shanghai' > /etc/timezone</run> <!-- 解决时区问题 -->
-                        <run>date</run>
-                        <!--<run>chmod 755 *</run>-->
-                    </runs>
-                    <entryPoint>["java", "-jar", "${project.build.finalName}.jar","--spring.profiles.active=local"]</entryPoint>
                 </configuration>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
