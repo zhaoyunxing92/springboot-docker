@@ -14,6 +14,12 @@
 mvn clean package docker:build
 ```
 
+## idea docker插件
+
+> 在使用idea的docker插件前需要执行`mvn clean package`或者按照下面配置修改
+
+![docker intergration](https://gitee.com/zhaoyunxing92/resource/raw/master/docker/2.png)
+
 ## 配置说明
 
 * 切换工作目录在 `app`
