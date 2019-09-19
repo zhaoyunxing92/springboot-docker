@@ -70,6 +70,8 @@ mvn clean package docker:build
 
 ## 注意点
 
+* `Dockerfile`位置必须跟`target`平级目录,`docker`的上下文不支持`../`去找文件
+
 * 使用插件build和idea插件后会出现`none`镜像
 
 ```shell
