@@ -67,3 +67,12 @@ mvn clean package docker:build
         </plugins>
     </build>
 ```
+
+## 注意点
+
+* 使用插件build和idea插件后会出现`none`镜像
+
+```shell
+# 删除 none镜像
+docker rmi -f $(docker images -f "dangling=true" -q )
+```
