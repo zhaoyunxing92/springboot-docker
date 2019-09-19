@@ -2,6 +2,12 @@
 
 使用[docker-maven-plugin](https://github.com/spotify/docker-maven-plugin)插件构建docker版的springboot服务
 
+## 用前准备
+
+* [docker-maven-plugin](https://github.com/spotify/docker-maven-plugin) 插件使用,对maven周期了解
+
+* [automatic property expansion using maven](https://docs.spring.io/spring-boot/docs/2.2.0.M6/reference/html/howto.html#howto-automatic-expansion-maven) spring boot 对maven的扩展
+
 ## 运行
 
 ```shell

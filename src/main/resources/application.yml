@@ -1,9 +1,9 @@
 spring:
   application:
-    name: springboot-docker
+    name: @project.artifactId@
   profiles:
     active: local
-
+# gzip 压缩
 server:
   compression:
     enabled: true
